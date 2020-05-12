@@ -1,0 +1,1611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A7B9C3"
+    android:padding="1dp"
+
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+<LinearLayout
+    android:id="@+id/faq"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:id="@+id/faqTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2B2A2C"
+        android:gravity="center"
+
+        android:textColor="@color/colorTextWhite"
+        android:text="Frequently asked questions"
+        android:textStyle="bold"
+        />
+
+
+</LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:padding="3dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/earth_status">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            >
+
+
+
+            <!--//Question 1-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                        <ImageView
+                            android:id="@+id/circleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/corona"
+                            android:elevation="25dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_view"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="What is a coronavirus?"
+                        android:textColor="@color/colorTextBlack"
+                        app:layout_constraintStart_toEndOf="@+id/circleImage"
+                        app:layout_constraintTop_toTopOf="@+id/circleImage" />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImage" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_view">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Coronaviruses are a large family of viruses which may cause illness in animals or humans.  In humans, several coronaviruses are known to cause respiratory infections ranging from the common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe Acute Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease COVID-19."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--q2-->
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq2"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+android:layout_below="@+id/cardView"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq2"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="How does COVID-19 spread?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                         app:layout_constraintStart_toEndOf="@+id/circleImageq2"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq2"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq2"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq2" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq2">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq2"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="People can catch COVID-19 from others who have the virus. The
+disease can spread from person to person through small droplets from
+the nose or mouth which are spread when a person with COVID-19
+coughs or exhales. These droplets land on objects and surfaces
+around the person. Other people then catch COVID-19 by touching
+these objects or surfaces, then touching their eyes, nose or mouth.
+People can also catch COVID-19 if they breathe in droplets from a
+person with COVID-19 who coughs out or exhales droplets. This is
+why it is important to stay more than 1 meter (3 feet) away from a
+person who is sick."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--q2-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq3"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq2"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq3"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Can the virus that causes COVID-19 be transmitted through the air? "
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                          app:layout_constraintStart_toEndOf="@+id/circleImageq3"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq3"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq3"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq3"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq3"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq3" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq3">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq3"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Studies to date suggest that the virus that causes COVID-19 is mainly
+transmitted through contact with respiratory droplets rather than
+through the air. "
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq4"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq3"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq4"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq4"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Can CoVID-19 be caught from a person who has no symptoms?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                          app:layout_constraintStart_toEndOf="@+id/circleImageq4"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq4"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq4"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq4"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq4" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq4">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq4"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="The main way the disease spreads is through respiratory droplets
+expelled by someone who is coughing. The risk of catching COVID-19
+from someone with no symptoms at all is very low. However, many
+people with COVID-19 experience only mild symptoms. This is
+particularly true at the early stages of the disease. It is therefore
+possible to catch COVID-19 from someone who has, for example, just
+a mild cough and does not feel ill."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq5"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq4"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq5"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq5"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Who is at risk of developing severe illness?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                          app:layout_constraintStart_toEndOf="@+id/circleImageq5"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq5"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq5"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq5"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq5" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq5">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq5"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="While we are still learning about how COVID-2019 affects people,
+older persons and persons with pre-existing medical conditions (such
+as high blood pressure, heart disease, lung disease, cancer or
+diabetes) appear to develop serious illness more often than others.
+"
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq6"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq5"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq6"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq6"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Are antibiotics effective in preventing or treating the COVID-19?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                         app:layout_constraintStart_toEndOf="@+id/circleImageq6"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq6"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq6"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq6"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq6"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq6" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq6">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq6"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="No. Antibiotics do not work against viruses, they only work on
+bacterial infections. COVID-19 is caused by a virus, so antibiotics do
+not work. Antibiotics should not be used as a means of prevention or
+treatment of COVID-19. They should only be used as directed by a
+physician to treat a bacterial infection."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq7"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq6"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq7"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq7"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="How to put on use take off and dispose of a mask?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                          app:layout_constraintStart_toEndOf="@+id/circleImageq7"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq7"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq7"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq7"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq7"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq7" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq7">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq7"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="1. Remember, a mask should only be used by health workers, care takers,
+and individuals with respiratory symptoms, such as fever and cough.\n
+2. Before touching the mask, clean hands with an alcohol-based
+hand rub or soap and water\n
+3. Take the mask and inspect it for tears or holes.\n
+4. Orient which side is the top side (where the metal strip is).\n
+5. Ensure the proper side of the mask faces outwards (the
+coloured side).\n
+6. Place the mask to your face. Pinch the metal strip or stiff edge of
+the mask so it moulds to the shape of your nose.\n
+7. Pull down the mask’s bottom so it covers your mouth and your
+chin.\n
+8. After use, take off the mask; remove the elastic loops from
+behind the ears while keeping the mask away from your face
+and clothes, to avoid touching potentially contaminated surfaces
+of the mask.\n
+9. Discard the mask in a closed bin immediately after use.\n
+10. Perform hand hygiene after touching or discarding the
+mask – Use alcohol-based hand rub or, if visibly soiled, wash
+your hands with soap and water."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq8"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq7"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq8"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq8"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Can humans become infected with the COVID-19 from an animal
+source?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                         app:layout_constraintStart_toEndOf="@+id/circleImageq8"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq8"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq8"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq8"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq8"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq8" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq8">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq8"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Coronaviruses are a large family of viruses that are common in
+animals. Occasionally, people get infected with these viruses which
+may then spread to other people. For example, SARS-CoV was
+associated with civet cats and MERS-CoV is transmitted by
+dromedary camels. Possible animal sources of COVID-19 have not
+yet been confirmed.\n
+To protect yourself, such as when visiting live animal markets, avoid
+direct contact with animals and surfaces in contact with animals.
+Ensure good food safety practices at all times. Handle raw meat, milk
+or animal organs with care to avoid contamination of uncooked foods
+and avoid consuming raw or undercooked animal products."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq9"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq8"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq9"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq9"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Is it safe to receive a package from any area where COVID-19 has
+been reported?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                         app:layout_constraintStart_toEndOf="@+id/circleImageq9"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq9"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq9"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq9"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq9"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq9" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq9">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq9"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Yes. The likelihood of an infected person contaminating commercial
+goods is low and the risk of catching the virus that causes COVID-19
+from a package that has been moved, travelled, and exposed to
+different conditions and temperature is also low."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq10"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq9"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq10"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq10"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Can COVID-19 be spread through coins and banknotes?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                            app:layout_constraintStart_toEndOf="@+id/circleImageq10"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq10"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq10"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq10"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq10"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq10" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq10">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq10"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="There is currently no evidence to confirm or disprove that COVID-19 virus can be transmitted through coins or banknotes. However, respiratory droplets expelled from an infected person can contaminate and persist on surfaces. Wash your hands regularly and thoroughly after touching any frequently-touched surface or object, including coins or banknotes. Avoid touching your eyes, mouth and nose, if your hands are not cleaned."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq11"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq10"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq11"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq11"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="How to wash fruits and vegetables in the time of COVID-19?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+                        app:layout_constraintStart_toEndOf="@+id/circleImageq11"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq11"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq11"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq11"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq11"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq11" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq11">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq11"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Fruits and vegetables are essential components of a healthy diet. Wash them the same way you would in any other circumstance. Before handling them, wash your hands with soap and water. Then, wash fruits and vegetables thoroughly with clean water, especially if you eat them raw."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq12"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq11"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq12"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq12"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Can a person who has had coronavirus get infected again?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+
+                        app:layout_constraintStart_toEndOf="@+id/circleImageq12"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq12"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq12"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq12"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq12"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq12" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq12">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq12"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="While we don't know the answer yet, most people would likely develop at least short-term immunity to the specific coronavirus that causes COVID-19. However, that immunity could want over time and you would still be susceptible to a different coronavirus infection. Or, this particular virus could mutate, just like the influenza virus does each year. Often these mutations change the virus enough to make you susceptible, because your immune system thinks it is an infection that it has never seen before."
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--q2-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewq13"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+                android:layout_below="@+id/cardViewq12"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad_countrie_status"
+                    >
+
+
+
+                    <ImageView
+                        android:id="@+id/circleImageq13"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/corona"
+                        android:elevation="25dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_viewq13"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="What can I do to keep my immune system strong?"
+                        android:gravity="left"
+                        android:textColor="@color/colorTextBlack"
+
+                        app:layout_constraintStart_toEndOf="@+id/circleImageq13"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq13"
+                        app:layout_constraintEnd_toStartOf="@id/arrowBtnq13"
+                        />
+
+
+
+
+                    <Button
+                        android:id="@+id/arrowBtnq13"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageq13"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageq13" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewq13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_viewq13">
+
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+                            <TextView
+                                android:id="@+id/coronaCasesCountq13"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="16dp"
+                                android:text="Your immune system is your body's defense system. When a harmful invader — like a cold or flu virus, or the coronavirus that causes COVID-19 — gets into your body, your immune system mounts an attack. Known as an immune response, this attack is a sequence of events that involves various cells and unfolds over time.\n
+
+Following general health guidelines is the best step you can take toward keeping your immune system strong and healthy. Every part of your body, including your immune system, functions better when protected from environmental assaults and bolstered by healthy-living strategies such as these:
+\n
+1. Don't smoke or vape.\n
+2. Eat a diet high in fruits, vegetables, and whole grains.\n
+3. Take a multivitamin if you suspect that you may not be getting all the nutrients you need through your diet.\n
+4. Exercise regularly.\n
+5. Maintain a healthy weight.\n
+6. Control your stress level.\n
+7. Control your blood pressure.\n
+8. If you drink alcohol, drink only in moderation (no more than one to two drinks a day for men, no more than one a day for women).\n
+9. Get enough sleep.\n
+10. Take steps to avoid infection, such as washing your hands frequently and trying not to touch your hands to your face, since harmful germs can enter through your eyes, nose, and mouth.\n"
+                                android:textColor="#8A000000"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

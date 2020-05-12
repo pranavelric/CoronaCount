@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView_worldcase_row_item"
+        style="@style/CardView.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="8dp"
+    android:layout_marginBottom="25dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/grad_countrie_status"
+            >
+
+<androidx.cardview.widget.CardView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginTop="16dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="100dp"
+    android:id="@+id/circleImageCountryCard"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    >
+            <ImageView
+                android:id="@+id/circleImageCountry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_virus_world"
+                android:elevation="25dp"
+                />
+
+</androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/CountryName"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Country Name"
+                android:textColor="@color/colorTextBlack"
+                app:layout_constraintBottom_toTopOf="@+id/country_continent_sub"
+                app:layout_constraintStart_toEndOf="@+id/circleImageCountryCard"
+                app:layout_constraintTop_toTopOf="@+id/circleImageCountryCard" />
+
+
+            <TextView
+                android:id="@+id/country_continent_sub"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="continent"
+                android:textColor="#8A000000"
+
+                app:layout_constraintStart_toEndOf="@+id/circleImageCountryCard"
+                app:layout_constraintTop_toBottomOf="@+id/CountryName" />
+
+            <Button
+                android:id="@+id/arrowBtnCountry"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageCountryCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/circleImageCountryCard" />
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableViewCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:paddingBottom="12dp"
+                app:el_duration="1000"
+                app:el_expanded="false"
+                app:el_parallax="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country_continent_sub"
+
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#c0c0c0"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/colorTextBlack"
+                    app:layout_constraintBottom_toTopOf="@+id/expandableView"
+                    />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingBottom="12dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:id="@+id/totalInfectionsCountry"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/corona"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/coronaCasesInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Coronavirus Cases: "
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/coronaCasesCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/totalInfectionsCountry"
+                        app:layout_constraintTop_toTopOf="@+id/totalInfectionsCountry" />
+
+                    <TextView
+                        android:id="@+id/coronaCasesCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="---"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="@+id/totalInfectionsCountry"
+                        app:layout_constraintStart_toEndOf="@id/totalInfectionsCountry"
+                        app:layout_constraintTop_toBottomOf="@+id/coronaCasesInCountry" />
+
+                    <ImageView
+                        android:id="@+id/newCasesInCountryimg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ic_statistics"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/totalInfectionsCountry" />
+
+                    <TextView
+                        android:id="@+id/newCasesInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Cases today:"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/newCasesCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/newCasesInCountryimg"
+                        app:layout_constraintTop_toTopOf="@+id/newCasesInCountryimg" />
+
+                    <TextView
+                        android:id="@+id/newCasesCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="--"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="@+id/newCasesInCountryimg"
+                        app:layout_constraintStart_toEndOf="@id/newCasesInCountryimg"
+                        app:layout_constraintTop_toBottomOf="@+id/newCasesInCountry" />
+
+                    <ImageView
+                        android:id="@+id/deathsInCountryImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ic_tombstone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/newCasesInCountryimg" />
+
+                    <TextView
+                        android:id="@+id/deathsInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Deaths:"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/deathCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/deathsInCountryImg"
+                        app:layout_constraintTop_toTopOf="@+id/deathsInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/deathCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="--"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="@id/deathsInCountryImg"
+                        app:layout_constraintStart_toEndOf="@id/deathsInCountryImg"
+                        app:layout_constraintTop_toBottomOf="@+id/deathsInCountry" />
+
+
+                    <ImageView
+                        android:id="@+id/todaydeathsInCountryImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ic_arrow_upward_black_24dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/deathsInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/todaydeathsInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Deaths today:"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/todaydeathCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/todaydeathsInCountryImg"
+                        app:layout_constraintTop_toTopOf="@+id/todaydeathsInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/todaydeathCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="--"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="@id/todaydeathsInCountryImg"
+                        app:layout_constraintStart_toEndOf="@id/todaydeathsInCountryImg"
+                        app:layout_constraintTop_toBottomOf="@+id/todaydeathsInCountry" />
+
+
+                    <ImageView
+                        android:id="@+id/recoveredInCountryImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ic_recovered"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/todaydeathsInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/recoveredInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Recovered:"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/recoveredCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/recoveredInCountryImg"
+                        app:layout_constraintTop_toTopOf="@+id/recoveredInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/recoveredCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="--"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="@id/recoveredInCountryImg"
+                        app:layout_constraintStart_toEndOf="@id/recoveredInCountryImg"
+                        app:layout_constraintTop_toBottomOf="@+id/recoveredInCountry" />
+
+                    <ImageView
+                        android:id="@+id/activeInCountryImg"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="22dp"
+                        android:src="@drawable/ic_health"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recoveredInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/activeInCountry"
+                        style="@style/TextAppearance.AppCompat.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="Active:"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toTopOf="@+id/activeCountInCountry"
+                        app:layout_constraintStart_toEndOf="@id/activeInCountryImg"
+                        app:layout_constraintTop_toTopOf="@+id/activeInCountryImg" />
+
+                    <TextView
+                        android:id="@+id/activeCountInCountry"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="--"
+                        android:textColor="#8A000000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/activeInCountryImg"
+                        app:layout_constraintTop_toBottomOf="@+id/activeInCountry" />
+
+
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+

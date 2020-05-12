@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <group
+        android:id="@+id/grp1"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/covid_cases"
+            android:title="COVID-19 Cases">
+            <menu>
+                <item
+                    android:id="@+id/nav_earth_status"
+                    android:icon="@drawable/ic_earth"
+
+                    android:title="@string/menu_earth_status" />
+                <item
+                    android:id="@+id/nav_countrywise_status"
+                    android:icon="@drawable/ic_virus_world"
+                    android:title="@string/menu_countrywise_status" />
+
+            </menu>
+        </item>
+    </group>
+
+
+    <group
+        android:id="@+id/grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/helpfull_info"
+            android:title="Smart info">
+            <menu>
+                <item
+                    android:id="@+id/nav_advices"
+                    android:icon="@drawable/ic_advice"
+                    android:title="@string/menu_advices" />
+                <item
+                    android:id="@+id/nav_symptoms"
+                    android:icon="@drawable/ic_symptom"
+                    android:title="@string/menu_symtoms" />
+
+                <item
+                    android:id="@+id/nav_faq"
+                    android:icon="@drawable/ic_faq"
+                    android:title="@string/menu_faq" />
+            </menu>
+        </item>
+    </group>
+</menu>

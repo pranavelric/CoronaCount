@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:drawable="@drawable/grad_splash"
+
+    />
+<item
+    android:top="100dp"
+android:gravity="center_horizontal"
+android:width="350dp"
+    android:height="200dp"
+    android:drawable="@drawable/coronacount"
+    />
+
+    <item
+
+        android:bottom="220dp"
+        android:gravity="bottom|center_horizontal"
+        android:drawable="@drawable/logo"
+        />
+    <item
+        android:width="200dp"
+        android:height="50dp"
+        android:bottom="120dp"
+        android:gravity="bottom|center_horizontal"
+
+        android:drawable="@drawable/staysaf"
+        />
+</layer-list>

@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>COVID-19 Symptoms</title>
+</head>
+<body>
+<header>
+    <center>
+        <h5><b>COVID-19 Symptoms</b></h5>
+    </center>
+    </header>
+        <br>
+        <div class="container-fluid  jumbotron" id="info">
+            <center>
+                <p>"The <img src='img/corona.png' height='24px' width='24px'/><b>COVID-19</b> virus affects different people in different ways. COVID-19 is a <b>respiratory disease </b><img src='img/respi.png' height='24px' width='24px'/> and
+                    most
+                    infected people will develop mild to moderate symptoms and recover without requiring special
+                    treatment.
+                    People who have underlying medical conditions and those over<b> 60 years old have a higher risk</b> of
+                    developing
+                    severe disease and death."</p>
+
+            </center>
+<br>
+            <div class="container-fluid jumbotron" id="symptomsinfo" >
+                <h5><b>&#9733;Common symptoms include:</b></h5>
+            <br>
+            <ul class="list-unstyled" id="symptomslist">
+  <li class="media  shadow p-3 mb-5 bg-gray rounded" >
+    <img src="img/fever.png" class="mr-3" alt="..." width="50px" height="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Fever</h5>
+
+    </div>
+  </li>
+  <li class="media my-4  shadow p-3 mb-5 bg-gray rounded ">
+    <img src="img/exhausted-man.png" class="mr-3" alt="..." height="50px" width="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Tiredness</h5>
+
+    </div>
+  </li>
+  <li class="media  shadow p-3 mb-5 bg-gray rounded">
+    <img src="img/cough.png" class="mr-3" alt="..." width="50px" height="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">dry cough</h5>
+
+    </div>
+  </li>
+</ul>
+            <br>
+                <h5><b>&#9733;Other symptoms include:</b></h5>
+            <br>
+            <ul class="list-unstyled">
+  <li class="media  shadow p-3 mb-5 bg-gray rounded">
+    <img src="img/shortnessbreath.png" class="mr-3" alt="..." height="50px" width="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Shortness of breath</h5>
+
+    </div>
+  </li>
+  <li class="media my-4  shadow p-3 mb-5 bg-gray rounded">
+    <img src="img/5728192%20-%20head%20headache%20migraine%20pain%20severe%20shock.png" class="mr-3" alt="..." height="50px" width="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Aches and pains</h5>
+
+    </div>
+  </li>
+  <li class="media my-4  shadow p-3 mb-5 bg-gray rounded">
+    <img src="img/5929234%20-%20avatar%20man%20sick%20sore%20throat.png" class="mr-3" alt="..." width="50px" height="50px">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Sore throat</h5>
+
+    </div>
+  </li>
+
+    <li class="media  shadow p-3 mb-5 bg-gray rounded">
+    <img src="img/5859224%20-%20coronavirus%20covid%20flu%20nose%20rhinitis%20runny%20sick.png" height="50px" width="50px" class="mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">And very few people will report diarrhoea, nausea or a runny nose.</h5>
+
+    </div>
+  </li>
+
+</ul>
+                <div class="container" id="symtomsimg">
+                    <img id="sympimg" src="img/symptoms.jpg" width="100%" />
+                </div>
+
+</div>
+
+            <button id="back_to_top" onclick="topFunction()">Top</button>
+            
+</div>
+
+
+
+
+    <script>
+       var btt =document.getElementById("back_to_top"),
+        body=document.body,
+        docElem = document.documentElement,
+        offset =50,
+        scrollPos,docHeight,isfirefox=navigator.userAgent.toLowerCase().indexOf("firefox")>-1;
+    docHeight =Math.max(body.scrollHeight,body.offsetHeight,docElem.clientHeight,docElem.scrollHeight,docElem.offsetHeight);
+    if(docHeight!='undefined'){
+        offset = docHeight/4;
+    }
+
+    window.addEventListener("scroll",function (event) {
+        scrollPos = body.scrollTop||docElem.scrollTop;
+        btt.className =(scrollPos>offset)?"visible":"";
+    })
+
+    btt.addEventListener("click",function (event) {
+        event.preventDefault();
+        if(isfirefox){
+            docElem.scrollTop=0;
+        }
+        else{
+            body.scrollTop=0;
+        }
+    })
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+    
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+                integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+                crossorigin="anonymous"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+</body>
+</html>

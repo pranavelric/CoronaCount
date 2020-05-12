@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A7B9C3"
+    android:padding="1dp"
+    >
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+
+
+
+
+<LinearLayout
+    android:id="@+id/earth_status"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/earth_status_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2B2A2C"
+        android:gravity="center"
+
+        android:textColor="@color/colorTextWhite"
+        android:text="COVID-19 CORONAVIRUS PANDEMIC"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/lastupdated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2B2A2C"
+        android:gravity="center"
+        android:textSize="10sp"
+        android:textColor="@color/colorTextWhite"
+        android:text="Last updated on-"
+        />
+</LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/nointernet"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        >
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/download"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/colorPrimaryLight"
+            android:layout_height="300dp"
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/noconnection"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            android:layout_marginTop="60dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="Please check your internet connection and try again! "
+            android:textAlignment="center"
+            android:textColor="@color/colorTextWhite"
+            android:background="#40E85A5A"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:padding="3dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/earth_status">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            >
+
+
+
+            <!--//carview total cases-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp"
+
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/grad"
+                    >
+
+
+
+                        <ImageView
+                            android:id="@+id/circleImage"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_virus_world"
+                            android:elevation="25dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+
+                    <TextView
+                        android:id="@+id/total_text_view"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Total COVID-19 Cases"
+                        android:textColor="@color/colorTextBlack"
+                        app:layout_constraintBottom_toTopOf="@+id/total_count_text_view"
+                        app:layout_constraintStart_toEndOf="@+id/circleImage"
+                        app:layout_constraintTop_toTopOf="@+id/circleImage"
+                        app:layout_constraintEnd_toStartOf="@+id/arrowBtn"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/total_count_text_view"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="2 Million+"
+                        android:textColor="#8A000000"
+                        app:layout_constraintStart_toEndOf="@+id/circleImage"
+                        app:layout_constraintTop_toBottomOf="@+id/total_text_view" />
+
+                    <Button
+                        android:id="@+id/arrowBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImage" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_count_text_view">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:textColor="@color/colorTextBlack"
+                            app:layout_constraintBottom_toTopOf="@+id/expandableView"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/totalInfections"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/corona"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/coronaCases"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Coronavirus Cases: "
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/coronaCasesCount"
+                                app:layout_constraintStart_toEndOf="@id/totalInfections"
+                                app:layout_constraintTop_toTopOf="@+id/totalInfections" />
+
+                            <TextView
+                                android:id="@+id/coronaCasesCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="2 Million"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/totalInfections"
+                                app:layout_constraintStart_toEndOf="@id/totalInfections"
+                                app:layout_constraintTop_toBottomOf="@+id/coronaCases" />
+
+                            <ImageView
+                                android:id="@+id/newCasesimg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_arrow_upward_black_24dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/totalInfections" />
+
+                            <TextView
+                                android:id="@+id/newCases"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Cases today:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/newCasesCount"
+                                app:layout_constraintStart_toEndOf="@id/newCasesimg"
+                                app:layout_constraintTop_toTopOf="@+id/newCasesimg" />
+
+                            <TextView
+                                android:id="@+id/newCasesCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/newCasesimg"
+                                app:layout_constraintStart_toEndOf="@id/newCasesimg"
+                                app:layout_constraintTop_toBottomOf="@+id/newCases" />
+
+                            <ImageView
+                                android:id="@+id/casesPerMillionImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_avoid_crowds"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/newCasesimg" />
+
+                            <TextView
+                                android:id="@+id/casesPerMillion"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Cases per million:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/casesPerMillionCount"
+                                app:layout_constraintStart_toEndOf="@id/casesPerMillionImg"
+                                app:layout_constraintTop_toTopOf="@+id/casesPerMillionImg" />
+
+                            <TextView
+                                android:id="@+id/casesPerMillionCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/casesPerMillionImg"
+                                app:layout_constraintTop_toBottomOf="@+id/casesPerMillion" />
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--//carview total deaths-->
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewdeaths"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/ic_grad_deaths"
+                    >
+
+
+
+                        <ImageView
+                            android:id="@+id/circleImagedeaths"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:elevation="12dp"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:src="@drawable/ic_headstone" />
+
+
+
+                    <TextView
+                        android:id="@+id/deaths_text_view"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Total Deaths"
+
+                        android:textColor="@color/colorTextBlack"
+
+                        app:layout_constraintBottom_toTopOf="@+id/total_death_count_text_view"
+                        app:layout_constraintStart_toEndOf="@+id/circleImagedeaths"
+                        app:layout_constraintTop_toTopOf="@+id/circleImagedeaths" />
+
+
+                    <TextView
+                        android:id="@+id/total_death_count_text_view"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="100K+"
+                        android:textColor="#8A000000"
+                        app:layout_constraintStart_toEndOf="@+id/circleImagedeaths"
+                        app:layout_constraintTop_toBottomOf="@+id/deaths_text_view" />
+
+                    <Button
+                        android:id="@+id/arrowBtndeath"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImagedeaths"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImagedeaths" />
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandableViewDeaths"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1.5dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_death_count_text_view">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:textColor="@color/colorTextBlack"
+                            app:layout_constraintBottom_toTopOf="@+id/expandableViewDeaths"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/totalDeaths"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_tombstone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/deathCases"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Deaths:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/deathCasesCount"
+                                app:layout_constraintStart_toEndOf="@id/totalDeaths"
+                                app:layout_constraintTop_toTopOf="@+id/totalDeaths" />
+
+                            <TextView
+                                android:id="@+id/deathCasesCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="100K"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/totalDeaths"
+                                app:layout_constraintStart_toEndOf="@id/totalDeaths"
+                                app:layout_constraintTop_toBottomOf="@+id/deathCases" />
+
+                            <ImageView
+                                android:id="@+id/newDeathsimg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_arrow_upward_black_24dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/totalDeaths" />
+
+                            <TextView
+                                android:id="@+id/newDeaths"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Deaths today:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/newDeathsCount"
+                                app:layout_constraintStart_toEndOf="@id/newDeathsimg"
+                                app:layout_constraintTop_toTopOf="@+id/newDeathsimg" />
+
+                            <TextView
+                                android:id="@+id/newDeathsCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/newDeathsimg"
+                                app:layout_constraintStart_toEndOf="@id/newDeathsimg"
+                                app:layout_constraintTop_toBottomOf="@+id/newDeaths" />
+
+                            <ImageView
+                                android:id="@+id/deathsPerMillionImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_cemetery"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/newDeathsimg" />
+
+                            <TextView
+                                android:id="@+id/deathsPerMillion"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Deaths per one million:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/deathsPerMillionCount"
+                                app:layout_constraintStart_toEndOf="@id/deathsPerMillionImg"
+                                app:layout_constraintTop_toTopOf="@+id/deathsPerMillionImg" />
+
+                            <TextView
+                                android:id="@+id/deathsPerMillionCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/deathsPerMillionImg"
+                                app:layout_constraintTop_toBottomOf="@+id/deathsPerMillion" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!--//carview total recovered-->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewRecovered"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardViewdeaths"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/ic_grad_recovered"
+                    >
+
+
+
+                        <ImageView
+                            android:id="@+id/circleImagerecovered"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_recovered"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:elevation="12dp"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+                    <TextView
+                        android:id="@+id/recovered_text_view"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+
+                        android:textColor="@color/colorTextBlack"
+
+                        android:text="Recovered"
+                        app:layout_constraintBottom_toTopOf="@+id/total_recovered_count_text_view"
+                        app:layout_constraintStart_toEndOf="@+id/circleImagerecovered"
+                        app:layout_constraintTop_toTopOf="@+id/circleImagerecovered" />
+
+
+                    <TextView
+                        android:id="@+id/total_recovered_count_text_view"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="500K+"
+                        android:textColor="#8A000000"
+                        app:layout_constraintStart_toEndOf="@+id/circleImagerecovered"
+                        app:layout_constraintTop_toBottomOf="@+id/recovered_text_view" />
+
+                    <Button
+                        android:id="@+id/arrowBtnrecovered"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImagerecovered"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImagerecovered" />
+
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandable_layout_recovered"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/total_recovered_count_text_view">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:textColor="@color/colorTextBlack"
+                            app:layout_constraintBottom_toTopOf="@+id/expandable_layout_recovered"
+                            />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/totalRecovered"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_exercise"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/recoveredCases"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Total Recoveries: "
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/recoveredCasesCount"
+                                app:layout_constraintStart_toEndOf="@id/totalRecovered"
+                                app:layout_constraintTop_toTopOf="@+id/totalRecovered" />
+
+                            <TextView
+                                android:id="@+id/recoveredCasesCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="100K"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/totalRecovered"
+                                app:layout_constraintStart_toEndOf="@id/totalRecovered"
+                                app:layout_constraintTop_toBottomOf="@+id/recoveredCases" />
+
+                            <ImageView
+                                android:id="@+id/activeimg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_tombstone"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/totalRecovered" />
+
+                            <TextView
+                                android:id="@+id/active"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Deaths:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/activeCount"
+                                app:layout_constraintStart_toEndOf="@id/activeimg"
+                                app:layout_constraintTop_toTopOf="@+id/activeimg" />
+
+                            <TextView
+                                android:id="@+id/activeCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/activeimg"
+                                app:layout_constraintStart_toEndOf="@id/activeimg"
+                                app:layout_constraintTop_toBottomOf="@+id/active" />
+
+                            <ImageView
+                                android:id="@+id/cricticalimg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_close"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/activeimg" />
+
+                            <TextView
+                                android:id="@+id/critical"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Closed cases:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/criticalCount"
+                                app:layout_constraintStart_toEndOf="@id/cricticalimg"
+                                app:layout_constraintTop_toTopOf="@+id/cricticalimg" />
+
+                            <TextView
+                                android:id="@+id/criticalCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/cricticalimg"
+                                app:layout_constraintTop_toBottomOf="@+id/critical" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!--//carview pie chart-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewchart"
+                android:layout_width="match_parent"
+                android:layout_height="470dp"
+                android:layout_below="@+id/cardViewRecovered"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="#E2F6F2"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+
+                >
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <!--//carview more infor-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/moreinfo"
+                style="@style/CardView.Light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cardViewchart"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="8dp"
+
+                app:cardCornerRadius="10dp"
+                app:cardElevation="8dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:background="@drawable/ic_grad_info"
+                    >
+
+
+
+                        <ImageView
+                            android:id="@+id/circleImageInfo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_stay_informed"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:elevation="12dp"
+
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+
+
+                    <TextView
+                        android:id="@+id/info_text_view"
+                        style="@style/TextAppearance.AppCompat.Title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="More Info"
+                        android:textColor="@color/colorTextBlack"
+                        app:layout_constraintStart_toEndOf="@+id/circleImageInfo"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageInfo" />
+
+                    <TextView
+                        android:id="@+id/sideinfo"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:text="..."
+                        android:textColor="#8A000000"
+                        app:layout_constraintStart_toEndOf="@+id/circleImageInfo"
+                        app:layout_constraintTop_toBottomOf="@+id/info_text_view" />
+
+                    <Button
+                        android:id="@+id/arrowBtnInfo"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="12dp"
+                        android:background="@drawable/ic_keyboard_arrow_down_black_24dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageInfo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageInfo" />
+
+
+                    <net.cachapa.expandablelayout.ExpandableLayout
+                        android:id="@+id/expandable_layout_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:paddingBottom="12dp"
+                        app:el_duration="1000"
+                        app:el_expanded="false"
+                        app:el_parallax="0.5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/info_text_view">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#c0c0c0"
+                            android:textColor="@color/colorTextBlack"
+                            android:layout_marginTop="25dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/sideinfo"
+                            />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:paddingBottom="12dp"
+
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <ImageView
+                                android:id="@+id/totaltestImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_5859223___checklist_clipboard_healthcare_medical_report"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/test"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Tests: "
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/testCount"
+                                app:layout_constraintStart_toEndOf="@id/totaltestImg"
+                                app:layout_constraintTop_toTopOf="@+id/totaltestImg"
+
+
+
+                                />
+
+                            <TextView
+                                android:id="@+id/testCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="100K"
+                                android:textColor="#8A000000"
+
+                                app:layout_constraintBottom_toBottomOf="@+id/totaltestImg"
+                                app:layout_constraintStart_toEndOf="@id/totaltestImg"
+                                app:layout_constraintTop_toBottomOf="@+id/test" />
+
+                            <ImageView
+                                android:id="@+id/testPerMillionimg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_laboratory"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/totaltestImg" />
+
+                            <TextView
+                                android:id="@+id/testPerMillion"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Tests per one million:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/testPerMillionCount"
+                                app:layout_constraintStart_toEndOf="@id/testPerMillionimg"
+                                app:layout_constraintTop_toTopOf="@+id/testPerMillionimg"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/testPerMillionCount"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="--"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@+id/testPerMillionimg"
+                                app:layout_constraintStart_toEndOf="@id/testPerMillionimg"
+                                app:layout_constraintTop_toBottomOf="@+id/testPerMillion" />
+
+                            <ImageView
+                                android:id="@+id/affectedImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_connection_global_route_spread_virus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/testPerMillionimg" />
+
+                            <TextView
+                                android:id="@+id/affected_text_view"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Affected continents:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/affectedContinents"
+                                app:layout_constraintStart_toEndOf="@id/affectedImg"
+                                app:layout_constraintTop_toTopOf="@+id/affectedImg" />
+
+                            <TextView
+                                android:id="@+id/affectedContinents"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="All"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="@id/affectedImg"
+                                app:layout_constraintStart_toEndOf="@id/affectedImg"
+                                app:layout_constraintTop_toBottomOf="@+id/affected_text_view" />
+
+                            <ImageView
+                                android:id="@+id/affectedCountriesImg"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginStart="12dp"
+                                android:layout_marginTop="22dp"
+                                android:src="@drawable/ic_5879326___coronavirus_covid19_disease_incident_infection_pandemic_virus"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/affectedImg" />
+
+                            <TextView
+                                android:id="@+id/affected_countries_text_view"
+                                style="@style/TextAppearance.AppCompat.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="Affected Countries:"
+                                android:textColor="#000"
+                                app:layout_constraintBottom_toTopOf="@+id/affectedCountries"
+                                app:layout_constraintStart_toEndOf="@id/affectedCountriesImg"
+                                app:layout_constraintTop_toTopOf="@+id/affectedCountriesImg" />
+
+                            <TextView
+                                android:id="@+id/affectedCountries"
+                                style="@style/TextAppearance.AppCompat.Body1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="32dp"
+                                android:text="All"
+                                android:textColor="#8A000000"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/affectedCountriesImg"
+                                app:layout_constraintTop_toBottomOf="@+id/affected_countries_text_view" />
+
+
+
+
+
+
+
+
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+                    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </RelativeLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
