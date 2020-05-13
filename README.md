@@ -29,7 +29,7 @@ This app also provides basic tips and advices to protect yourself from COVID-19.
  For Map : You need to add  your api key for google map. used https://github.com/sharewire/google-maps-clustering lib for Google Maps Clustering
  
  # Libraries used
-   * API By ExpDev07: For Server Api.
+   * API : https://github.com/NovelCOVID/API
 * Pi Charts: A powerful 🚀 Android chart view / graph view library.
 * Google Maps Clustering for Android
 
