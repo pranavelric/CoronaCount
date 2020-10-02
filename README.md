@@ -1,5 +1,8 @@
 # CoronaCount - Coronavirus Tracker Android App
 
+
+<img src="https://forthebadge.com/images/badges/made-with-java.svg"/>
+
 This is as **COVID-19 tracker**. It provides basic  information about  new coronavirus (2019-nCoV).
 It's uses basic API for tracking. For api you can check https://github.com/NovelCOVID/API repository (Specially thanks to contributor for this).
 You can see country wise  data with searching feature. You can see all location point and data count on Map, and Rendered information statistics with the help of charts.
